@@ -1,9 +1,9 @@
 train: 
-  batch_size: 256
+  batch_size: 128
   early_stop_mode: max
   early_stop_patience: 20
-  epochs: 1000
-  device: 1
+  epochs: 3 # 1000
+  device: cpu
   optimizer: adam
   learning_rate: 0.001
   weight_decay: 0
@@ -15,9 +15,9 @@ model:
   loss_fn: 'bce'
 
 eval:
-  batch_size: 2048
+  batch_size: 128 # 2048
   cutoff: [20, 10]
   val_metrics: [ndcg, recall]
   test_metrics: [ndcg, recall]
-  topk: 100 # Max len of user hist to reduce complexity
+  topk: 50 # Max len of user hist to reduce complexity
   save_path: './saved/'

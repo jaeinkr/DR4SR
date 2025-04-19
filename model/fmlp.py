@@ -35,8 +35,8 @@ class FMLP(BaseModel):
             output_all_encoded_layers=True,
         )
         transformer_out = item_encoded_layers[-1]
-        transformer_out = transformer_out[:, -1]
-        return transformer_out
+        #transformer_out = transformer_out[:, -1]
+        #return transformer_out
         if not need_pooling:
             return transformer_out
         else:
